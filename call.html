@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //call
+        var obj = {num:2}
+        var addToThis = function(a)
+        {
+            return this.num + a;
+        }
+        console.log(addToThis.call(obj,3));
+
+      //apply
+       var obj = {num:2};
+       var obj2 = {num:4};
+       var addToThis = function(a,b,c)
+       {
+        return this.num+a+b+c;
+       };
+       var arr=[1,2,3];
+       console.log(addToThis.apply(obj,arr));
+       console.log(addToThis.apply(obj2,arr));
+      //bind
+       let multiply = function (x,y)
+       {
+        console.log(x*y);
+       }
+       let multiplyByTwo = multiply.bind(this,3);
+       multiplyByTwo(2);
+
+       //Example 1
+       let age=20;
+       let student1 = function (age)
+       {
+        console.log(age);
+       }
+       let student2 = student1.bind(this,age);
+       student2();
+
+
+        </script>
+</body>
+</html>
