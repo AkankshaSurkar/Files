@@ -38,6 +38,29 @@ class student{
         Yash.setPlacementAge(18)(40);
 
 
+        //fat arrow And normal arrow
+        let obj ={
+            name: "Akanksha Surkar",
+            age: 26,
+            thisInArrow : () =>{
+                console.log("my name is" +this.name);
+            },
+        
+            printDetailallUser (){
+                const findName =() =>{
+                    console.log("my name is" +this.name);
+                }
+                const printage = () =>{
+                    console.log("my age is" +this.age);
+                }
+                findName();
+                printage();
+            }
+        };
+        obj.printDetailallUser();
+
+
+
         </script>
 </body>
 </html>
