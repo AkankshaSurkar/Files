@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+class student{
+    constructor(name,age,marks)
+    {
+        this.name=name;
+        this.age=age;
+        this.marks=marks;
+    }
+    setPlacementAge(minPlacementAge)
+    {
+        console.log(this);
+        return (minMarks) => {
+            console.log('inside egligible for CurrentCompany', this );
+        
+        if(this.marks>minMarks && this.age>minPlacementAge)
+        {
+            console.log(this.name+ " is ready for placement ");
+        }
+        else{
+            console.log(this.name+ " is not ready for placement ");
+
+        }
+    }
+  }
+}
+        const Yash = new student('yash', 25,75);
+        const Vaibhav = new student('vaibhav', 30,80);
+        Yash.setPlacementAge(18)(40);
+
+
+        </script>
+</body>
+</html>
