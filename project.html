@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="saveToLocalStorage(event)">
+      <label> Choose expenseamount: </label>
+      <input type="text" name="expenseamount"  id="expenseamount" required />
+      <label> Choose description: </label>
+      <input type="text" name="description" id="description" required />
+      <label> Choose a category: </label>
+      <input type="text" name="category" id="category"/>
+      <button>Add Expense</button>
+    </form>
+    <ul id="listOfitems"></ul>
+    <script>
+      function saveToLocalStorage(event) {
+        event.preventDefault();
+        const expenseamount = event.target.expenseamount.value;
+        const description = event.target.description.value;
+        const category = event.target.category.value;
+
+        const obj = {
+            expenseamount,
+            description,
+            category,
+        };
+       // localStorage.setItem(obj.email, JSON.stringify(obj));
+        showUserOnScreen(obj);
+
+        function showUserOnScreen(obj) {
+          const parentElem = document.getElementById("listOfitems");
+          const childElem = document.createElement('li');
+          childElem.textContent = obj.expenseamount+ '-' +obj.description+ '-' +obj.category;
+
+            const deleteButton = document.createElement('input');
+            deleteButton.value='Delete Expense';
+            deleteButton.onclick = () => {
+                //localStorage.removeItem(obj.email);
+                parentElem.removeChild(childElem);
+            }
+            
+            const editButton = document.createElement('input');
+            editButton.value='Edit Expense';
+            editButton.onclick = () => {
+              //  localStorage.removeItem(obj.email);
+                parentElem.removeChild(childElem);
+
+                document.getElementById('expenseamount').value = obj.expenseamount
+                document.getElementById('description').value = obj.description
+                document.getElementById('category').value = obj.category
+
+            }
+            childElem.appendChild(deleteButton);
+            childElem.appendChild(editButton);
+            parentElem.appendChild(childElem);
+        }
+      }
+    </script>
+  </body>
+</html>
