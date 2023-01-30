@@ -45,7 +45,7 @@ function getPosts(){
 
         function create4thPost(post,callback){
             setTimeout(() => {
-                post1s.push({...post, createdAt: new Date().getTime()});
+                post1sstatus.push({...post, createdAt: new Date().getTime()});
                 callback();
             }, 6000);
         }
