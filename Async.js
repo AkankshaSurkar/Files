@@ -85,8 +85,18 @@ console.log('person5: show ticket');
 
 //4 question
     
-    
+async function example() {
+
+    let promise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve("done!"), 2000)
+    });
+  
+    let result = await promise;
+    alert(result); 
+  }
+  
+  example();
+  
     
 
 
-0

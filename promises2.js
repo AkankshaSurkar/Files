@@ -106,16 +106,7 @@ createPost({title:'Post Three', body:'This is post Three',createdAt: new Date().
 .catch(err=> console.log(err))
 
 
-try{
-    await promise1
-    await promise2
-    Promise.all([promise1,promise2])
-    .then (()=>{
-        promise3
-    })
-    .catch(err)
-    
-    }
+
 
 
 
